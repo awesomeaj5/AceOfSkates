@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 68867092}
   - component: {fileID: 68867091}
   - component: {fileID: 68867093}
+  - component: {fileID: 68867094}
   m_Layer: 0
   m_Name: Skater
   m_TagString: Untagged
@@ -225,6 +226,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &68867094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68867090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cd9b31ade12f54bab98eb0bf26d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523614975
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,8 +314,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523614975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0464, y: -4.2215, z: 0}
-  m_LocalScale: {x: 13.427321, y: 1.3877658, z: 1}
+  m_LocalPosition: {x: 2.6871, y: -4.2215, z: 0}
+  m_LocalScale: {x: 18.894926, y: 1.3877658, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
