@@ -34,6 +34,8 @@ public class Skater : MonoBehaviour
         {
             myAnimator.SetBool("isRolling", true);
             myAnimator.SetBool("isHeelflip", false);
+            myAnimator.SetBool("isKickflip", false);
+            myAnimator.SetBool("isGrab", false);
             if (!isOllieTriggered)
             {
                 myAnimator.SetBool("isOllie", false);
@@ -76,11 +78,19 @@ public class Skater : MonoBehaviour
 
     void OnKickflip(InputValue value)
     {
+        if (!isGrounded && myAnimator.GetBool("isOllie"))
+        {
+            myAnimator.SetBool("isKickflip", true);
+            Debug.Log("Doing kickflip");
+        }
         Debug.Log("Doing kickflip");
     }
 
     void OnGrab(InputValue value)
     {
-        Debug.Log("Doing grab now");
+        {
+            myAnimator.SetBool("isGrab", true);
+            Debug.Log("Doing grab");
+        }
     }
 }
