@@ -14,6 +14,8 @@ public class Skater : MonoBehaviour
     Animator myAnimator;
     Rigidbody2D myRigidBody;
     CapsuleCollider2D myCapsuleCollider;
+
+    BoxCollider2D myBoxCollider;
     bool isGrounded = false;
     bool isOllieTriggered = false;
 
@@ -23,6 +25,7 @@ public class Skater : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        myBoxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -103,8 +106,11 @@ public class Skater : MonoBehaviour
         }
     }
 
-    void playerFail()
+    public void playerFail()
     {
-        FindObjectOfType<GameSession>().afterFail();
+        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
+        {
+            Debug.Log("Bailed");
+        }
     }
 }
