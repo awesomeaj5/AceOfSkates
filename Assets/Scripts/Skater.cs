@@ -7,6 +7,10 @@ public class Skater : MonoBehaviour
 {
     [SerializeField]
     float speed = 0.05f;
+
+    [SerializeField]
+    int pointsForTricks = 500;
+    int pointsForOllie = 250;
     Animator myAnimator;
     Rigidbody2D myRigidBody;
     CapsuleCollider2D myCapsuleCollider;
@@ -51,6 +55,8 @@ public class Skater : MonoBehaviour
     void OnOllie(InputValue value)
     {
         // Perform ollie only if the skater is grounded and the ollie is not already triggered
+        //Note: Ollie score works but we don't want to add ollie score if player also does trick
+        //This is because we already have a trick score set.
         if (isGrounded && !isOllieTriggered)
         {
             isOllieTriggered = true;
@@ -58,6 +64,7 @@ public class Skater : MonoBehaviour
             myRigidBody.velocity += new Vector2(0f, 4f);
             Debug.Log("Ollie animation triggered");
             StartCoroutine(OllieCooldown());
+            FindObjectOfType<GameSession>().addToScore(pointsForOllie);
         }
     }
 
@@ -73,6 +80,7 @@ public class Skater : MonoBehaviour
         {
             myAnimator.SetBool("isHeelflip", true);
             Debug.Log("Doing heelflip now");
+            FindObjectOfType<GameSession>().addToScore(pointsForTricks);
         }
     }
 
@@ -82,8 +90,8 @@ public class Skater : MonoBehaviour
         {
             myAnimator.SetBool("isKickflip", true);
             Debug.Log("Doing kickflip");
+            FindObjectOfType<GameSession>().addToScore(pointsForTricks);
         }
-        Debug.Log("Doing kickflip");
     }
 
     void OnGrab(InputValue value)
@@ -91,6 +99,12 @@ public class Skater : MonoBehaviour
         {
             myAnimator.SetBool("isGrab", true);
             Debug.Log("Doing grab");
+            FindObjectOfType<GameSession>().addToScore(pointsForTricks);
         }
+    }
+
+    void playerFail()
+    {
+        FindObjectOfType<GameSession>().afterFail();
     }
 }
