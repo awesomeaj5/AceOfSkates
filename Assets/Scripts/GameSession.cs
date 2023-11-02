@@ -4,12 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Scripting;
 
 public class GameSession : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI scoreText;
     int playerScore = 0;
+    public float restartDelay = 2.5f;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,13 +34,20 @@ public class GameSession : MonoBehaviour
 
     public void afterFail()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(RestartWithDelay(restartDelay));
     }
 
     public void addToScore(int pointsToAdd)
     {
         playerScore += pointsToAdd;
         scoreText.text = playerScore.ToString();
+    }
+
+    public IEnumerator RestartWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

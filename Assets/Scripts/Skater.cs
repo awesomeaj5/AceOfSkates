@@ -35,6 +35,7 @@ public class Skater : MonoBehaviour
         isGrounded = myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
         transform.Translate(speed, 0, 0);
+        playerFail();
 
         // Ollie logic
         if (isGrounded)
@@ -110,7 +111,12 @@ public class Skater : MonoBehaviour
     {
         if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
         {
+            myAnimator.SetBool("isBailed", true);
             Debug.Log("Bailed");
+
+            //Restart level after bail
+            FindObjectOfType<GameSession>()
+                .afterFail();
         }
     }
 }
