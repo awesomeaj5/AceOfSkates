@@ -11,7 +11,7 @@ public class GameSession : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI scoreText;
     int playerScore = 0;
-    public float restartDelay = 2.5f;
+    public float restartDelay = 3.5f;
 
     // Start is called before the first frame update
     void Awake()
