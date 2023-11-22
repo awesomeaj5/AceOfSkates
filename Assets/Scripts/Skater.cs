@@ -13,7 +13,7 @@ public class Skater : MonoBehaviour
     int pointsForOllie = 250;
     Animator myAnimator;
     Rigidbody2D myRigidBody;
-    CapsuleCollider2D myCapsuleCollider;
+    // CapsuleCollider2D myCapsuleCollider;
 
     BoxCollider2D myBoxCollider;
     bool isGrounded = false;
@@ -24,7 +24,7 @@ public class Skater : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
-        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        // myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();
     }
 
@@ -32,7 +32,7 @@ public class Skater : MonoBehaviour
     void Update()
     {
         // Check for ground contact in the Update method
-        isGrounded = myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isGrounded = myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
         transform.Translate(speed, 0, 0);
         playerFail();
