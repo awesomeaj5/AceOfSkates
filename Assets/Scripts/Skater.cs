@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,29 +14,46 @@ public class Skater : MonoBehaviour
     int pointsForOllie = 250;
     Animator myAnimator;
     Rigidbody2D myRigidBody;
-    CapsuleCollider2D myCapsuleCollider;
+
+    [SerializeField]
+    private float detectSphereRadius = 0.1f;
+
+    [SerializeField]
+    private Transform groundCheck;
+
+    private LayerMask groundLayer;
+    private LayerMask hazardLayer;
+
+    // CapsuleCollider2D myCapsuleCollider;
 
     BoxCollider2D myBoxCollider;
     bool isGrounded = false;
     bool isOllieTriggered = false;
+
+    private void Awake()
+    {
+        // groundCheck = transform.Find("ground check");
+        groundLayer = LayerMask.GetMask("Ground");
+        hazardLayer = LayerMask.GetMask("Hazard");
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
         myRigidBody = GetComponent<Rigidbody2D>();
-        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        // myCapsuleCollider = GetComponent<CapsuleCollider2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         // Check for ground contact in the Update method
-        isGrounded = myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        // isGrounded = myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isGrounded = IsCollideLayer(groundLayer);
 
         transform.Translate(speed, 0, 0);
-        playerFail();
+        PlayerFail();
 
         // Ollie logic
         if (isGrounded)
@@ -54,6 +72,21 @@ public class Skater : MonoBehaviour
         {
             myAnimator.SetBool("isRolling", false);
         }
+    }
+
+    // Update is called once per frame
+    void Update() { }
+
+    private bool IsCollideLayer(int layerToCheck)
+    {
+        var col = Physics2D.OverlapCircle(groundCheck.position, detectSphereRadius, layerToCheck);
+
+        return col != null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, detectSphereRadius);
     }
 
     void OnOllie(InputValue value)
@@ -107,9 +140,11 @@ public class Skater : MonoBehaviour
         }
     }
 
-    public void playerFail()
+    public void PlayerFail()
     {
-        if (myBoxCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
+        bool isCollideHazard = IsCollideLayer(hazardLayer);
+
+        if (isCollideHazard)
         {
             myAnimator.SetBool("isBailed", true);
             Debug.Log("Bailed");
