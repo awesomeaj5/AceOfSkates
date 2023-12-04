@@ -14,18 +14,7 @@ public class GameSession : MonoBehaviour
     public float restartDelay = 0.001f;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        int numGameSessions = FindObjectsOfType<GameSession>().Length;
-        if (numGameSessions > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+
 
     void Start()
     {
