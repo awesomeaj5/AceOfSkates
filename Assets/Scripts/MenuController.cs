@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene("1 Intro Skate");
+        SceneManager.LoadScene("2 Sculpture Contest");
     }
 
     public void LoadTrickGuide()

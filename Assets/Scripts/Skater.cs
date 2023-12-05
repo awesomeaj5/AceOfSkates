@@ -98,7 +98,7 @@ public class Skater : MonoBehaviour
         {
             isOllieTriggered = true;
             myAnimator.SetBool("isOllie", true);
-            myRigidBody.velocity += new Vector2(0f, 4f);
+            myRigidBody.velocity += new Vector2(0f, 5f);
             Debug.Log("Ollie animation triggered");
             StartCoroutine(OllieCooldown());
             FindObjectOfType<GameSession>().addToScore(pointsForOllie);

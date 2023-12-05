@@ -400,6 +400,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &129276958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129276959}
+  m_Layer: 0
+  m_Name: groundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &129276959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129276958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.41, y: -5.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 269168625}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &164444508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,13 +3247,13 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 85
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 269168625}
   m_Follow: {fileID: 269168625}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -3244,7 +3274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529215251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -126.40594, y: -19.069674, z: -10}
+  m_LocalPosition: {x: -106.94853, y: -15.164271, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526209183}
@@ -3716,7 +3746,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3740,7 +3770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831026752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -126.40594, y: -19.069674, z: -10}
+  m_LocalPosition: {x: -106.94853, y: -15.164271, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3891,11 +3921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 150.66986
+      value: 165.15
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.867784
+      value: -16.38
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4885,11 +4915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992065, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.9174
+      value: -14.46
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992065, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.7054
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992065, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4925,11 +4955,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992067, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: speed
-      value: 0.09
+      value: 0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 2808417578870992067, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 129276959}
     - target: {fileID: 2808417578870992071, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: m_Name
       value: Skater
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808417578870992071, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
