@@ -23,9 +23,6 @@ public class Skater : MonoBehaviour
 
     private LayerMask groundLayer;
     private LayerMask hazardLayer;
-
-    // CapsuleCollider2D myCapsuleCollider;
-
     BoxCollider2D myBoxCollider;
     bool isGrounded = false;
     bool isOllieTriggered = false;
