@@ -21,6 +21,14 @@ public class GameSession : MonoBehaviour
         scoreText.text = playerScore.ToString();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void afterFail()
     {
         StartCoroutine(RestartWithDelay(restartDelay));

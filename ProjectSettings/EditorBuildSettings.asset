@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TrickGuide.unity
-    guid: 7bab61000a6a67d4cb48d9339bd8ca65
-  - enabled: 1
     path: Assets/Scenes/0 Main Menu.unity
     guid: b3b4338ce4b5be848894aadfd4ded79e
   - enabled: 1
+    path: Assets/Scenes/TrickGuide.unity
+    guid: 7bab61000a6a67d4cb48d9339bd8ca65
+  - enabled: 0
     path: Assets/Scenes/1 Intro Skate.unity
     guid: 5f86e1c5b039f41d0a94d9fde3c7d19c
   - enabled: 1

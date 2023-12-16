@@ -3579,11 +3579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410799129202291694, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.7386
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 3410799129202291694, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1543
+      value: 12.4
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_RootOrder
@@ -3591,11 +3591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 141.78181
+      value: 143.05
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.114998
+      value: -16.33
       objectReference: {fileID: 0}
     - target: {fileID: 4235293597888009167, guid: 8b601456b538fb5448417d672f998452, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   m_Follow: {fileID: 269168625}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 7.84
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -6200,7 +6200,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.84
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7902,7 +7902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992067, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: speed
-      value: 0.08
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2808417578870992067, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: groundCheck
@@ -7911,6 +7911,10 @@ PrefabInstance:
     - target: {fileID: 2808417578870992071, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
       propertyPath: m_Name
       value: Skater
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808417578870992071, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a7f76a610035ec46a08404bccbff088, type: 3}
